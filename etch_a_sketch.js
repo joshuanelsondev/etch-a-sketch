@@ -21,6 +21,5 @@ function createGrid() {
             container.appendChild(column);
         }
     }
-    
 }
 
