@@ -1,7 +1,7 @@
 const container = document.getElementById('container');
 const slider = document.getElementById('slide');
 const sliderValueDisplay = document.getElementById('sliderValueDisplay');
-let gridSize;
+let gridSize = 5;
 sliderValueDisplay.innerHTML = slider.value;
 
 slider.oninput = function() {
