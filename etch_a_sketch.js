@@ -1,4 +1,4 @@
-const container = document.getElementById('container');
+const screen = document.getElementById('screen');
 const slider = document.getElementById('slide');
 const sliderValueDisplay = document.getElementById('sliderValueDisplay');
 let gridSize = 5;
@@ -12,13 +12,13 @@ slider.oninput = function() {
 };
 
 function createGrid() {
-    container.replaceChildren();
+    screen.replaceChildren();
     for (let i = 0; i < gridSize; i++) {
-        const row = container.appendChild(document.createElement('div'));
+        const row = screen.appendChild(document.createElement('div'));
         for (let j = 0; j < gridSize; j++) {
             const column = document.createElement('div');
             column.classList.add('gridBox');
-            container.appendChild(column);
+            screen.appendChild(column);
         }
     }
 }

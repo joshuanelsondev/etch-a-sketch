@@ -1,28 +1,39 @@
+/* Create a red border around the header and screen */
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid red 8em;
+    border-top: none;
+    border-radius: 5%;
+    margin: auto;
+    width: 50em;
+}
 
 #headerBox {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Grape Nuts', cursive, Georgia, serif;
-    font-size: 24px;
+    font-size: 28px;
     color: rgb(232, 195, 26);
     background-color: rgb(255, 16, 16);
-    width: 40em;
-    height: 4em;
     margin: auto;
+    width: inherit;
+    height: auto;
 }
 
-#container {
-    position: relative;
+#screen {
     outline: 2px solid #ff1010;
     font-size: 0;
-    margin: auto;
-    height: 640px;
-    width: 800px;
+    margin: 0px;
+    height: 40rem;
+    width: 50rem;
     padding: 0;
     border-style: inset;
     border-radius: 2%;
-    border-width: thick;
+    border-width: 8px;
     
 }
 
