@@ -1,4 +1,4 @@
-/* Position the slider at the bottom middle of the container */
+
 
 #mainContainer {
     display: flex;
@@ -32,10 +32,11 @@
     border-radius: 5%;
     margin: auto;
     width: 30em;
+    box-shadow: 10px 10px rgb(164, 26, 26);
 }
 
 #screen {
-    outline: 2px solid #ff1010;
+    display: grid;
     font-size: 0;
     margin: 0px;
     height: 30rem;
@@ -51,7 +52,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    outline: 1px solid #000;
+    outline: 1px solid black;
     display: inline-block;
 }
 
