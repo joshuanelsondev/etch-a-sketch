@@ -1,35 +1,45 @@
-/* Create a red border around the header and screen */
-#container {
+/* Position the slider at the bottom middle of the container */
+
+#mainContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid red 8em;
-    border-top: none;
-    border-radius: 5%;
-    margin: auto;
-    width: 50em;
+    position: relative;
 }
 
 #headerBox {
     display: flex;
+    position: absolute;
+    top: 0;
     justify-content: center;
     align-items: center;
     font-family: 'Grape Nuts', cursive, Georgia, serif;
     font-size: 28px;
     color: rgb(232, 195, 26);
-    background-color: rgb(255, 16, 16);
+    background-color: transparent;
     margin: auto;
     width: inherit;
     height: auto;
+}
+
+#screenContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid red 8em;
+    border-radius: 5%;
+    margin: auto;
+    width: 30em;
 }
 
 #screen {
     outline: 2px solid #ff1010;
     font-size: 0;
     margin: 0px;
-    height: 40rem;
-    width: 50rem;
+    height: 30rem;
+    width: 30rem;
     padding: 0;
     border-style: inset;
     border-radius: 2%;
@@ -43,4 +53,40 @@
     border: none;
     outline: 1px solid #000;
     display: inline-block;
+}
+
+.sliderPanel {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+   
+}
+
+.slideContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftKnob  {
+    position: absolute;
+    bottom: 2%;
+    left: 25%;
+    background-color: white;
+    border-radius: 50%;
+    width: 8em;
+    height: 8em;
+}   
+
+.rightKnob {
+    position: absolute;
+    bottom: 2%;
+    right: 25%;
+    background-color: white;
+    border-radius: 50%;
+    width: 8em;
+    height: 8em;
+    
 }
