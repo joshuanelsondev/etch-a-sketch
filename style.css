@@ -14,7 +14,7 @@
     top: 0;
     justify-content: center;
     align-items: center;
-    font-family: 'Grape Nuts', cursive, Georgia, serif;
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
     font-size: 28px;
     color: rgb(232, 195, 26);
     background-color: transparent;
@@ -52,7 +52,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    outline: 1px solid black;
+    outline: 1px solid rgb(227, 225, 225);
     display: inline-block;
 }
 
