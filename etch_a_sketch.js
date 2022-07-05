@@ -1,7 +1,7 @@
 const screen = document.getElementById('screen');
 const slider = document.getElementById('slide');
 const sliderValueDisplay = document.getElementById('sliderValueDisplay');
-let gridSize = 5;
+let gridSize = 25;
 sliderValueDisplay.innerHTML = slider.value;
 
 // User range slider for creating the grid size
