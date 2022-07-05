@@ -1,7 +1,14 @@
 const screen = document.getElementById('screen');
 const slider = document.getElementById('slide');
 const sliderValueDisplay = document.getElementById('sliderValueDisplay');
+const blackPen = document.getElementById('black');
+const randomColor = document.getElementById('random');
+const colorShader = document.getElementById('shader');
+const clearScreen = document.getElementById('clear');
+const colorPicker = document.getElementById('pickColor');
 let gridSize = 25;
+let divs = screen.getElementsByTagName('div');
+let currentPen = () => defaultPen();
 sliderValueDisplay.innerHTML = slider.value;
 
 // User range slider for creating the grid size
@@ -9,11 +16,14 @@ slider.oninput = function() {
     sliderValueDisplay.textContent = this.value;
     gridSize = this.value;
     createGrid();
+    currentPen();
+
     
 };
 
 function createGrid() {
     screen.replaceChildren();
+    
     for (let i = 0; i < gridSize; i++) {
         // const row = screen.appendChild(document.createElement('div'));
         for (let j = 0; j < gridSize; j++) {
@@ -25,5 +35,23 @@ function createGrid() {
 
         }
     }
+    currentPen();
 }
 
+// Button functions to allow user to choose pen color or clear the grid
+function defaultPen(){
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('mouseover', function () { this.style.backgroundColor = 'black'; });
+    }
+    
+}
+
+blackPen.addEventListener('click', defaultPen);
+
+clearScreen.addEventListener('click', createGrid);
+
+
+window.onload = () => {
+    createGrid();
+    
+};
