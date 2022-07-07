@@ -32,20 +32,28 @@ function createGrid() {
             screen.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
             screen.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
             screen.appendChild(column);
+            
+           
+            
+            
 
         }
+        
     }
     currentPen();
+    
 }
 
 // Button functions to allow user to choose pen color or clear the grid
 function defaultPen(){
     for (let i = 0; i < divs.length; i++) {
         divs[i].addEventListener('mouseover', function () { this.style.backgroundColor = 'black'; });
+       
     }
     
 }
 
+// function randomColor
 blackPen.addEventListener('click', defaultPen);
 
 clearScreen.addEventListener('click', createGrid);

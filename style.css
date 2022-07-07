@@ -1,17 +1,10 @@
 /* Reformat the white buttons to have functionality and to be in a fixed position */
 
-#mainContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 
 #headerBox {
     display: flex;
     position: absolute;
-    top: 0;
+    top: -130px;
     justify-content: center;
     align-items: center;
     font-family: 'Grape Nuts', roboto, fantasy, serif;
@@ -33,6 +26,7 @@
     margin: auto;
     width: 30em;
     box-shadow: 10px 10px rgb(164, 26, 26);
+    position: relative;
 }
 
 #screen {
@@ -69,25 +63,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: -130px;
 }
 
 .leftKnob  {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    bottom: 2%;
-    left: 25%;
+    bottom: -25%;
+    left: -25%;
     background-color: white;
     border-radius: 50%;
     width: 8em;
     height: 8em;
 }   
 
+
 .rightKnob {
     position: absolute;
-    bottom: 2%;
-    right: 25%;
+    bottom: -25%;
+    right: -25%;
     background-color: white;
     border-radius: 50%;
     width: 8em;
     height: 8em;
     
+}
+
+#pickColor {
+    background-color: white;
+    border-color: white;
+    width: 30%;
+    height: 30%;
+    margin-top: 10px;
 }

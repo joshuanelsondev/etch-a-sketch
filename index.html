@@ -10,27 +10,29 @@
         
     </head>
     <body>
-        <div id="mainContainer">
+        
+           
+        <div id="screenContainer">
             <div id="headerBox">
                 <h1 class="header">Etch A Sketch</h1>
             </div>
-            <div id="screenContainer">
-                <div id="screen"></div>
+            <div id="screen"></div>
+            <button class="leftKnob">Pick Color<input type="color" id="pickColor" value="#ff0000"></button>
+            <button id="clear" class="rightKnob">Clear Screen</button>
+        
+        <div class="sliderPanel">
+            <div class="slideContainer">
+                <input id="slide" type="range" min="1" max="50" value="25">
+                <p class="sliderText">Grid Size: <span id="sliderValueDisplay"></span></p>
             </div>
-            <div class="sliderPanel">
-                <div class="slideContainer">
-                    <input id="slide" type="range" min="1" max="50" value="25">
-                    <p class="sliderText">Grid Size: <span id="sliderValueDisplay"></span></p>
-                </div>
-            </div>
-            <button class="leftKnob"></button>
-            <button class="rightKnob"></button>
         </div>
+        </div>
+            
+       
         <button id="black">Black</button>
         <button id="random">Random Color</button>
         <button id="shader">Color Shader</button>
-        <button id="clear">Clear Screen</button>
-        <input type="color" id="pickColor" >
+        
         
         
         
