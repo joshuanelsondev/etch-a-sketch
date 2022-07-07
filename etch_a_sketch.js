@@ -2,7 +2,7 @@ const screen = document.getElementById('screen');
 const slider = document.getElementById('slide');
 const sliderValueDisplay = document.getElementById('sliderValueDisplay');
 const blackPen = document.getElementById('black');
-const randomColor = document.getElementById('random');
+const rainbow = document.getElementById('rainbow');
 const colorShader = document.getElementById('shader');
 const clearScreen = document.getElementById('clear');
 const colorPicker = document.getElementById('pickColor');
@@ -47,14 +47,24 @@ function createGrid() {
 // Button functions to allow user to choose pen color or clear the grid
 function defaultPen(){
     for (let i = 0; i < divs.length; i++) {
-        divs[i].addEventListener('mouseover', function () { this.style.backgroundColor = 'black'; });
+        divs[i].addEventListener('mouseover', function() {this.style.backgroundColor = 'black'; });
        
     }
     
 }
 
-// function randomColor
+function userPen(){
+    
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('mouseover', function() {this.style.backgroundColor = colorPicker.value; });
+    }
+    currentPen = userPen;
+}
+
+// Button events
 blackPen.addEventListener('click', defaultPen);
+
+colorPicker.addEventListener('click', userPen);
 
 clearScreen.addEventListener('click', createGrid);
 

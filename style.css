@@ -1,5 +1,8 @@
 /* Reformat the white buttons to have functionality and to be in a fixed position */
 
+body {
+    background-image: url(toy-story-background-g2220d3e99_1920.jpg);
+}
 
 #headerBox {
     display: flex;
@@ -27,6 +30,7 @@
     width: 30em;
     box-shadow: 10px 10px rgb(164, 26, 26);
     position: relative;
+    background: white;
 }
 
 #screen {
