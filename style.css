@@ -1,4 +1,4 @@
-/* Reformat the white buttons to have functionality and to be in a fixed position */
+/* Style the buttons and create functions for rainbow and shader, possibly add a random color option */
 
 body {
     background-image: url(toy-story-background-g2220d3e99_1920.jpg);
@@ -71,7 +71,7 @@ body {
     bottom: -130px;
 }
 
-.leftKnob  {
+#colorPick  {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -83,10 +83,13 @@ body {
     border-radius: 50%;
     width: 8em;
     height: 8em;
+    margin-top: 10px;
+   
+    
 }   
 
 
-.rightKnob {
+#clear {
     position: absolute;
     bottom: -25%;
     right: -25%;
@@ -97,13 +100,13 @@ body {
     
 }
 
-#pickColor {
+/* #pickColor {
     background-color: white;
     border-color: white;
     width: 30%;
     height: 30%;
     margin-top: 10px;
-}
+} */
 
 #black {
     position: absolute;
