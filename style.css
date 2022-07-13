@@ -6,6 +6,7 @@ body {
 
 #headerBox {
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: -130px;
     justify-content: center;
@@ -14,9 +15,18 @@ body {
     font-size: 28px;
     color: rgb(232, 195, 26);
     background-color: transparent;
-    margin: auto;
+    margin: -30px;
     width: inherit;
     height: auto;
+}
+
+.header {
+    margin-bottom: 0;
+}
+
+p.text {
+    margin-top: 0;
+    color: black;
 }
 
 #screenContainer {
@@ -71,9 +81,34 @@ body {
     bottom: -130px;
 }
 
+#slide {
+    -webkit-appearance: none;
+    background-color: white;
+    height: 2px;
+}
+
+#slide::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(232, 195, 26);
+    cursor: pointer;
+}
+
+p.sliderText {
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
+    font-size: 20px;
+    margin: 10px;
+    color: rgb(232, 195, 26);
+}
+
+/* Button stylings */
+
 #colorPick  {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -85,9 +120,25 @@ body {
     height: 8em;
     margin-top: 10px;
    
-    
 }   
 
+#pickColor {
+    -webkit-appearance: none;
+    border: none;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+
+}
+
+#pickColor::-webkit-color-swatch {
+    border-radius: 50%;
+}
+
+span#pickColorText {
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
+    font-size: 17px;
+}
 
 #clear {
     position: absolute;
@@ -100,27 +151,50 @@ body {
     
 }
 
-/* #pickColor {
-    background-color: white;
-    border-color: white;
-    width: 30%;
-    height: 30%;
-    margin-top: 10px;
-} */
+span#clearScreenButton {
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
+    font-size: 17px;
+}
 
 #black {
     position: absolute;
-    bottom: -30px;
-    left: 2px;
-}
+    bottom: -60px;
+    left: 25px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
+    }
+
 
 #rainbow {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     bottom: -30px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    bottom: -60px;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
 }
 
 #gray {
     position: absolute;
-    bottom: -30px;
-    right: 2px;
+    bottom: -60px;
+    right: 25px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-weight: normal;
+    font-size: 18px;
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
 }
