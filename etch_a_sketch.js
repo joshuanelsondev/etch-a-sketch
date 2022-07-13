@@ -3,7 +3,7 @@ const slider = document.getElementById('slide');
 const sliderValueDisplay = document.getElementById('sliderValueDisplay');
 const blackPen = document.getElementById('black');
 const rainbow = document.getElementById('rainbow');
-const colorShader = document.getElementById('shader');
+const gray = document.getElementById('gray');
 const clearScreen = document.getElementById('clear');
 const colorPicker = document.getElementById('pickColor');
 const colorButton = document.getElementsByClassName('btn');
@@ -23,10 +23,12 @@ slider.oninput = function() {
     sliderValueDisplay.textContent = this.value;
     gridSize = this.value;
     createGrid();
-    currentPen();
+
 
     
 };
+
+//Grid functions
 
 function createGrid() {
     screen.replaceChildren();
@@ -35,7 +37,6 @@ function createGrid() {
     for (let i = 0; i < gridSize*gridSize; i++) {
         gridElement[i] = document.createElement('div');
         gridElement[i].classList.add('gridBox');
-        gridElement[i].addEventListener('click', currentPen);
         screen.appendChild(gridElement[i]);
         
     }  
@@ -67,15 +68,22 @@ function currentPen(e) {
             e.target.style.backgroundColor = 'black';
         break;
         case 'rainbow':
-            e.target.style.backgroundColor = 'pink'; //Create a function for rainbow colors
+            const randomColor = Math.floor(Math.random() * 360);
+            e.target.style.backgroundColor = `hsl(${randomColor}, 100%, 50%)`; 
         break;
-        case 'shader':
-            e.target.style.backgroundColor = 'gray'; //Create a function that shades the color
+        case 'gray':
+            e.target.style.backgroundColor = `gray`; 
         break;
         default:    
             e.target.style.backgroundColor = 'black';
+    } 
+}
+
+function activatePen(e) {
+    activePen = e.target.id;
+    if(activeGrid) {
+        toggleGridPen();
     }
-    
     
 }
 
@@ -89,16 +97,17 @@ clearScreen.addEventListener('click', createGrid);
 
 rainbow.addEventListener('click', activatePen);
 
-colorShader.addEventListener('click', activatePen);
+gray.addEventListener('click', activatePen);
 
-function activatePen(e) {
-    activePen = e.target.id;
-    active = true;
-   
-}
+
 
 
 screen.addEventListener('click', toggleGridPen);
+screen.addEventListener('mouseleave', () => {
+    if(activeGrid) {
+        toggleGridPen();
+    }
+} );
 
 window.onload = () => {
     createGrid();
