@@ -198,3 +198,14 @@ span#clearScreenButton {
     font-size: 18px;
     font-family: 'Grape Nuts', roboto, fantasy, serif;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#logo {
+    width: 25px;
+    margin-top: 10px;
+}
