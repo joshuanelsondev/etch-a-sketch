@@ -205,7 +205,7 @@ footer {
     margin-top: 30px;
 }
 
-#logo {
-    width: 25px;
-    margin-top: 10px;
+a {
+    text-decoration: none;
+    color: rgb(232, 195, 26);
 }

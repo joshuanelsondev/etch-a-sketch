@@ -34,14 +34,14 @@
         </div>
 
         <footer class="footer">
-            <p>
+            <p id="copyright">
                 Copyright ©
                 <script>
-                    document.createTextNode(new Date().getFullYear())
+                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
                 </script>
-                josh-ua-nelson
+                <a href="https://github.com/josh-ua-nelson" target="_blank">josh-ua-nelson</a>
             </p>
-            <a href="https://github.com/josh-ua-nelson" target="_blank"><img id="logo" src="GitHub-Mark-32px.png" alt="Github logo"></a>
+        
         </footer>
         
 
