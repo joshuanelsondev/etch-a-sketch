@@ -2,6 +2,11 @@
 
 body {
     background-image: url(toy-story-background-g2220d3e99_1920.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 #headerBox {
@@ -200,9 +205,10 @@ span#clearScreenButton {
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    text-align: center;
+    margin: 14vh 0 auto;
+    position: relative;
+    bottom: 5%;
 }
 
 a {
