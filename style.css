@@ -18,7 +18,7 @@ body {
     align-items: center;
     font-family: 'Grape Nuts', roboto, fantasy, serif;
     font-size: 28px;
-    color: rgb(232, 195, 26);
+    color: gold;
     background-color: transparent;
     margin: -30px;
     width: inherit;
@@ -29,9 +29,17 @@ body {
     margin-bottom: 0;
 }
 
+footer {
+    text-align: center;
+    margin: 14vh 0 auto;
+    position: relative;
+    bottom: 5%;
+}
+
 p.text {
     margin-top: 0;
     color: black;
+    font-size: 24px;
 }
 
 #screenContainer {
@@ -98,7 +106,7 @@ p.text {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: rgb(232, 195, 26);
+    background: #ffd700;
     cursor: pointer;
 }
 
@@ -106,12 +114,14 @@ p.sliderText {
     font-family: 'Grape Nuts', roboto, fantasy, serif;
     font-size: 20px;
     margin: 10px;
-    color: rgb(232, 195, 26);
+    color: gold;
+    
 }
+
 
 /* Button stylings */
 
-#colorPick  {
+#colorPickButton  {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -127,7 +137,7 @@ p.sliderText {
    
 }   
 
-#pickColor {
+#pickColorIcon {
     -webkit-appearance: none;
     border: none;
     background-color: transparent;
@@ -136,7 +146,7 @@ p.sliderText {
 
 }
 
-#pickColor::-webkit-color-swatch {
+#pickColorIcon::-webkit-color-swatch {
     border-radius: 50%;
 }
 
@@ -165,7 +175,7 @@ span#clearScreenButton {
     position: absolute;
     bottom: -60px;
     left: 25px;
-    background-color: white;
+    background-color: gold;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -189,6 +199,7 @@ span#clearScreenButton {
     font-size: 14px;
     font-weight: normal;
     font-family: 'Grape Nuts', roboto, fantasy, serif;
+    background-color: white;
 }
 
 #gray {
@@ -204,14 +215,38 @@ span#clearScreenButton {
     font-family: 'Grape Nuts', roboto, fantasy, serif;
 }
 
-footer {
+#penOn {
+    position: absolute;
+    left: -15%;
+    top: 40%;
+    border-radius: 50px;
+    height: 35px;
+    width: 35px;
+    font-size: 12px;
     text-align: center;
-    margin: 14vh 0 auto;
-    position: relative;
-    bottom: 5%;
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
+    font-weight: bold;
+    background-color: white;
+   
+
+}
+
+#penOff {
+    position: absolute;
+    left: -15%;
+    bottom: 40%;
+    border-radius: 50px;
+    height: 35px;
+    width: 35px;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Grape Nuts', roboto, fantasy, serif;
+    font-weight: bold;
+    background-color: white;
+
 }
 
 a {
     text-decoration: none;
-    color: rgb(232, 195, 26);
+    color: gold;
 }

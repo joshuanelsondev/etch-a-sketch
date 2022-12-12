@@ -5,13 +5,15 @@ const blackPen = document.getElementById('black');
 const rainbow = document.getElementById('rainbow');
 const gray = document.getElementById('gray');
 const clearScreen = document.getElementById('clear');
-const colorPicker = document.getElementById('pickColor');
-const colorButton = document.getElementsByClassName('btn');
+const colorPickerIcon = document.getElementById('pickColorIcon');
+const colorPickButton = document.getElementById('colorPickButton');
+const penOnButton = document.getElementById('penOn');
+const penOffButton = document.getElementById('penOff');
 let gridSize = 25;
 let gridElement = [];
 let divs = screen.getElementsByTagName('div');
 let activeGrid = false;
-let activePen = 'default';
+let activePen = null;
 let userPenColor;
 
 
@@ -49,11 +51,17 @@ function toggleGridPen(){
             cell.addEventListener('mouseover', currentPen);
         });
         activeGrid = true;
+        penOnButton.style.cssText = 'background: gold;';
+        penOffButton.style.cssText = 'background: white;';
+       
+
     } else {
         gridElement.forEach(cell => {
             cell.removeEventListener('mouseover', currentPen);
         });
         activeGrid = false;
+        penOnButton.style.cssText = 'background: white;';
+        penOffButton.style.cssText = 'background: gold;';
     }
 }
 
@@ -61,8 +69,9 @@ function toggleGridPen(){
 function currentPen(e) {
     
     switch(activePen) {
-        case 'pickColor':
-            e.target.style.backgroundColor = colorPicker.value;
+        case 'pickColorIcon':
+            e.target.style.backgroundColor = colorPickerIcon.value;
+
         break;
         case 'black':
             e.target.style.backgroundColor = 'black';
@@ -80,9 +89,17 @@ function currentPen(e) {
 }
 
 function activatePen(e) {
-    activePen = e.target.id;
+    activePen = e.target.id; 
+    blackPen.style.backgroundColor = 'white';
+    rainbow.style.backgroundColor = 'white';
+    gray.style.backgroundColor = 'white';
+    e.target.style.backgroundColor = 'gold';
+    colorPickerIcon.style.backgroundColor = 'white';
+
+    
     if(activeGrid) {
         toggleGridPen();
+        
     }
     
 }
@@ -91,7 +108,7 @@ function activatePen(e) {
 // Button events
 blackPen.addEventListener('click', activatePen);
 
-colorPicker.addEventListener('click', activatePen);
+colorPickerIcon.addEventListener('click', activatePen);
 
 clearScreen.addEventListener('click', createGrid);
 
@@ -111,5 +128,6 @@ screen.addEventListener('mouseleave', () => {
 
 window.onload = () => {
     createGrid();
+    penOffButton.style.backgroundColor = 'gold';
     
 };
