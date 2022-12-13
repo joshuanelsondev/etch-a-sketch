@@ -4,8 +4,9 @@ const sliderValueDisplay = document.getElementById('sliderValueDisplay');
 const blackPen = document.getElementById('black');
 const rainbow = document.getElementById('rainbow');
 const gray = document.getElementById('gray');
+const eraser = document.getElementById('eraser');
 const clearScreen = document.getElementById('clear');
-const colorPickerIcon = document.getElementById('pickColorIcon');
+const pickColorIcon = document.getElementById('pickColorIcon');
 const colorPickButton = document.getElementById('colorPickButton');
 const penOnButton = document.getElementById('penOn');
 const penOffButton = document.getElementById('penOff');
@@ -70,8 +71,7 @@ function currentPen(e) {
     
     switch(activePen) {
         case 'pickColorIcon':
-            e.target.style.backgroundColor = colorPickerIcon.value;
-
+            e.target.style.backgroundColor = pickColorIcon.value;
         break;
         case 'black':
             e.target.style.backgroundColor = 'black';
@@ -81,21 +81,25 @@ function currentPen(e) {
             e.target.style.backgroundColor = `hsl(${randomColor}, 100%, 50%)`; 
         break;
         case 'gray':
-            e.target.style.backgroundColor = `gray`; 
+            e.target.style.backgroundColor = 'gray'; 
         break;
+        case 'eraser':
+            e.target.style.backgroundColor = 'white';
+            break;
         default:    
             e.target.style.backgroundColor = 'black';
     } 
 }
 
 function activatePen(e) {
-    activePen = e.target.id; 
+    
+    activePen = e.target.id || 'pickColorIcon'; 
     blackPen.style.backgroundColor = 'white';
     rainbow.style.backgroundColor = 'white';
     gray.style.backgroundColor = 'white';
+    eraser.style.backgroundColor = 'white';
     e.target.style.backgroundColor = 'gold';
-    colorPickerIcon.style.backgroundColor = 'white';
-
+    pickColorIcon.style.backgroundColor = 'white';
     
     if(activeGrid) {
         toggleGridPen();
@@ -108,13 +112,15 @@ function activatePen(e) {
 // Button events
 blackPen.addEventListener('click', activatePen);
 
-colorPickerIcon.addEventListener('click', activatePen);
-
-clearScreen.addEventListener('click', createGrid);
+pickColorIcon.addEventListener('click', activatePen);
 
 rainbow.addEventListener('click', activatePen);
 
 gray.addEventListener('click', activatePen);
+
+eraser.addEventListener('click', activatePen);
+
+clearScreen.addEventListener('click', createGrid);
 
 
 
